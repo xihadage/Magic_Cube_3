@@ -14,21 +14,18 @@ public class Block {
 
 	private Point3D centerPoint;
 	private float length;
-	
-	/**
-	 *
-	 */
+
 	private Point3D point1=new Point3D();private Point3D point2=new Point3D();
 	private Point3D point3=new Point3D();private Point3D point4=new Point3D();
 	private Point3D point5=new Point3D();private Point3D point6=new Point3D();
 	private Point3D point7=new Point3D();private Point3D point8=new Point3D();
 	
-	private boolean coloredUp=false;	//�����Ƿ���ɫ
-	private boolean coloredDown=false;	//�����Ƿ���ɫ
-	private boolean coloredLeft=false;	//�����Ƿ���ɫ
-	private boolean coloredRight=false;	//�����Ƿ���ɫ
-	private boolean coloredFront=false;	//ǰ���Ƿ���ɫ
-	private boolean coloredBack=false;	//�����Ƿ���ɫ
+	private boolean coloredUp=false;
+	private boolean coloredDown=false;
+	private boolean coloredLeft=false;
+	private boolean coloredRight=false;
+	private boolean coloredFront=false;
+	private boolean coloredBack=false;
 	
 	public final static String up="up";
 	public final static String down="down";
@@ -156,11 +153,8 @@ public class Block {
     }
 	
 	public void draw(GLAutoDrawable glDrawable){
-		//
-        final GL2 gl2 = glDrawable.getGL().getGL2();  
-
+        final GL2 gl2 = glDrawable.getGL().getGL2();
         gl2.glBegin(GL2.GL_QUADS);  
-        Point3D normal;
 
         gl2.glColor3f( 0.5f,0.5f,0.5f );
         if (coloredFront) {
@@ -170,6 +164,7 @@ public class Block {
         gl2.glVertex3f(point4.x, point4.y, point4.z);  
         gl2.glVertex3f(point8.x, point8.y, point8.z);  
         gl2.glVertex3f(point5.x, point5.y, point5.z);
+
         gl2.glColor3f( 0.5f,0.5f,0.5f );
         if (coloredBack) {
             gl2.glColor3f( backColor[0],backColor[1],backColor[2]);
@@ -229,7 +224,7 @@ public class Block {
 	}
 	
 	/**
-	 *
+	 * rotateXYZ
 	 * @param x
 	 * @param y
 	 * @param z
