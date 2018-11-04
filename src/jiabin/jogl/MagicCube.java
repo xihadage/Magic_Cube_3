@@ -34,7 +34,8 @@ public class MagicCube {
 //            char[] a=mycube.sequence;
             String[] str = mycube.cut(mycube);
 
-            resStack=new Stack(mycube.count);
+
+/*            resStack=new Stack(mycube.count);
             resStackReg=new Stack(mycube.count);
             for (int i = 0; i<mycube.count; i++)
             {
@@ -43,7 +44,21 @@ public class MagicCube {
                 if((s!=null)&&(!s.equals(""))) {
                     resStack.push(s);
                 }
+            }*/
+
+            //open method test
+            String[] open={"l90","R90","F180","d180","f90","r90","D90","b180","R180","b90","D90","F90",
+                    "u90","l180","u90","b180","R180","U90","l180","d90","l180","D90"};
+            resStack=new Stack(mycube.count);
+            resStackReg=new Stack(mycube.count);
+            for (int i = 0; i<open.length; i++)
+            {
+                String s=open[open.length-1-i];
+                if((s!=null)&&(!s.equals(""))) {
+                    resStack.push(s);
+                }
             }
+
         }catch (Exception e){
             e.printStackTrace();
         }
