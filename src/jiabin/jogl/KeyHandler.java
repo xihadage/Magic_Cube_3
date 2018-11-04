@@ -67,8 +67,9 @@ public class KeyHandler extends KeyAdapter{
                 if (!renderer.isRotating()) {
                     if (!MagicCube.resStackReg.isEmpty()) {
                         String s = MagicCube.resStackReg.pop();
-                        MagicCube.resStack.push(s);
+                        System.out.println(s);
                         judjeAndRun(s, false);
+                        MagicCube.resStack.push(s);
                     } else {
                         System.out.println("plase start up");
                     }
@@ -139,36 +140,20 @@ public class KeyHandler extends KeyAdapter{
             if (isNormal) {
                 if (s.contains("90")){
                     realRotate(s,true);
-                }else if (s.contains("180")){
-                    realRotate(s, true);
-                    MagicCube.resStack.push(s.replace("180","90"));
-//                    realRotate(s, true);
                 }
             } else {
                 if (s.contains("90")){
                     realRotate(s, false);
-                } else if (s.contains("180")){
-                    realRotate(s, false);
-                    MagicCube.resStack.push(s.replace("180","90"));
-//                    realRotate(s, false);
                 }
             }
         }else{
             if (isNormal) {
                 if (s.contains("90")){
                     realRotate(s,false);
-                }else if (s.contains("180")){
-                    realRotate(s, false);
-                    MagicCube.resStack.push(s.replace("180","90"));
-//                    realRotate(s, false);
                 }
             } else {
                 if (s.contains("90")){
                     realRotate(s, true);
-                }else if (s.contains("180")){
-                    realRotate(s, true);
-                    MagicCube.resStack.push(s.replace("180","90"));
-//                    realRotate(s, true);
                 }
             }
         }

@@ -9,8 +9,8 @@ public class MagicCube {
     public static final char[][] up = {{'y','b','r'},{'o','y','g'},{'o','y','b'}};
     public static final char[][] down = {{'g','b','g'},{'g','w','r'},{'r','y','y'}};
 
-    public static Stack resStack;
-    public static Stack resStackReg;
+    public static Stack resStack=new Stack(500);
+    public static Stack resStackReg=new Stack(500);
 	public static void main(String[] args) {
         ColorInit.setColor();
         try
@@ -49,13 +49,18 @@ public class MagicCube {
             //open method test
             String[] open={"l90","R90","F180","d180","f90","r90","D90","b180","R180","b90","D90","F90",
                     "u90","l180","u90","b180","R180","U90","l180","d90","l180","D90"};
-            resStack=new Stack(mycube.count);
-            resStackReg=new Stack(mycube.count);
             for (int i = 0; i<open.length; i++)
             {
                 String s=open[open.length-1-i];
                 if((s!=null)&&(!s.equals(""))) {
-                    resStack.push(s);
+                    if (s.contains("180")){
+                        String sDiv=s.replace("180", "90");
+                        resStack.push(sDiv);
+                        resStack.push(sDiv);
+                    }else{
+                        resStack.push(s);
+                    }
+
                 }
             }
 
