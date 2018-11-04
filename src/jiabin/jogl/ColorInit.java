@@ -12,7 +12,6 @@ public class ColorInit {
     public static Map<String,String> colorMap=new HashMap<String, String>();
 
     public static void  setColor(){
-
         //左边一层
         colorMap.put(Block.left+Block.down+Block.back,String.valueOf(MagicCube.left[0][0])+","+String.valueOf(MagicCube.down[0][2])+","+String.valueOf(MagicCube.back[0][0]));//"y,g,r"
         colorMap.put(Block.left+Block.down,String.valueOf(MagicCube.left[1][0])+","+String.valueOf(MagicCube.down[1][2]));//"w,r"
@@ -48,7 +47,6 @@ public class ColorInit {
         colorMap.put(Block.right+Block.up+Block.back,String.valueOf(MagicCube.right[0][0])+","+String.valueOf(MagicCube.up[0][2])+","+String.valueOf(MagicCube.back[2][2]));//"w,r,g"
         colorMap.put(Block.right+Block.up,String.valueOf(MagicCube.right[1][0])+","+String.valueOf(MagicCube.up[1][2]));//"r,g"
         colorMap.put(Block.right+Block.up+Block.front,String.valueOf(MagicCube.right[2][0])+","+String.valueOf(MagicCube.up[2][2])+","+String.valueOf(MagicCube.front[0][2]));//"w,b,o"
-
 
         //左边一层
 /*        colorMap.put(Block.left+Block.down+Block.back,"y,g,r");//

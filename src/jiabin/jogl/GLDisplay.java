@@ -73,7 +73,7 @@ public class GLDisplay {
         label.setOpaque(true);
         label.setBackground(Color.cyan);
         frame.getContentPane().add(label, BorderLayout.NORTH);
-        frame.getContentPane().add( glCanvas, BorderLayout.CENTER );
+        frame.getContentPane().add( glCanvas, BorderLayout.CENTER);
 
         addKeyListener( new MyKeyAdapter() );
 

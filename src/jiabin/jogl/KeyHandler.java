@@ -12,12 +12,10 @@ public class KeyHandler extends KeyAdapter{
     public KeyHandler(CubeRenderer renderer, GLDisplay glDisplay) {  
         this.renderer = renderer;  
     }  
-  
 
     public void keyPressed(KeyEvent e) {  
         processKeyEvent(e, true);  
     }  
-  
 
     private void processKeyEvent(KeyEvent e, boolean pressed) {  
         switch (e.getKeyCode()) {
@@ -78,6 +76,7 @@ public class KeyHandler extends KeyAdapter{
         }
 
     }
+
     private void judjeAndRun(String s, boolean isNormal) {
         if (s.contains("F")) {
             rMagc(s,true,isNormal);
@@ -135,6 +134,7 @@ public class KeyHandler extends KeyAdapter{
             System.out.println("special:"+s);
         }
     }
+
     private void rMagc(String s,boolean dir,boolean isNormal){
         if (dir){
             if (isNormal) {
@@ -158,6 +158,7 @@ public class KeyHandler extends KeyAdapter{
             }
         }
     }
+
     private void realRotate(String s,boolean dir){
         if (s.toUpperCase().contains("F")){
             renderer.ratate90(dir, new Selected(Selected.Z, 2));

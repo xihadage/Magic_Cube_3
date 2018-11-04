@@ -34,7 +34,6 @@ public class MagicCube {
 //            char[] a=mycube.sequence;
             String[] str = mycube.cut(mycube);
 
-
 /*            resStack=new Stack(mycube.count);
             resStackReg=new Stack(mycube.count);
             for (int i = 0; i<mycube.count; i++)
@@ -60,10 +59,8 @@ public class MagicCube {
                     }else{
                         resStack.push(s);
                     }
-
                 }
             }
-
         }catch (Exception e){
             e.printStackTrace();
         }

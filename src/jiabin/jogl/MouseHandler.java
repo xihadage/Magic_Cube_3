@@ -20,8 +20,6 @@ public class MouseHandler extends MouseMotionAdapter implements MouseListener{
 		//glDisplay.registerMouseEventForHelp(, modifiers, description);
 	}
 
-
-
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		super.mouseDragged(e);
@@ -39,29 +37,21 @@ public class MouseHandler extends MouseMotionAdapter implements MouseListener{
 		oldPoint=e.getPoint();
 	}
 
-
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
-
-
 	@Override
 	public void mousePressed(MouseEvent e) {
 		oldPoint=e.getPoint();
 	}
 
-
-
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		
 	}
-
-
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
@@ -69,13 +59,10 @@ public class MouseHandler extends MouseMotionAdapter implements MouseListener{
 		
 	}
 
-
-
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
+
 }
