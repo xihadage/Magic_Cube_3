@@ -215,7 +215,7 @@ public class CubeRenderer implements GLEventListener {
 							}
 						}
 						count++;
-						try{Thread.sleep(8);}
+						try{Thread.sleep(2);}
 					      catch(InterruptedException e) {;}
 						if (count>=120) {
 							setRotating(false);
@@ -252,7 +252,7 @@ public class CubeRenderer implements GLEventListener {
 							}
 						}
 						count++;
-						try{Thread.sleep(8);}
+						try{Thread.sleep(2);}
 					      catch(InterruptedException e) {;}
 						if (count>=120) {
 							setRotating(false);
@@ -289,7 +289,7 @@ public class CubeRenderer implements GLEventListener {
 							}
 						}
 						count++;
-						try{Thread.sleep(8);}
+						try{Thread.sleep(2);}
 					      catch(InterruptedException e) {;}
 						if (count>=120) {
 							setRotating(false);
