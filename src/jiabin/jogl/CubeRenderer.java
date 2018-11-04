@@ -23,8 +23,7 @@ public class CubeRenderer implements GLEventListener {
 
     private float curXRot;
     private float curYRot;
-  
-    //
+
     private float z = -6.0f;  
   
     private GLUgl2 glu = new GLUgl2();  
@@ -75,22 +74,14 @@ public class CubeRenderer implements GLEventListener {
         gl2.glTranslatef(0.0f, 0.0f, this.z); 
         gl2.glRotatef(curXRot, 1.0f, 0.0f, 0.0f);  
         gl2.glRotatef(curYRot, 0.0f, 1.0f, 0.0f);  
-        
-        /*drawSelected(glDrawable);
-        for(int i=1;i<=20;i++){
-        	blocks[i].draw(glDrawable);
-        }
-        blockBlue.draw(glDrawable);
-        blockRed.draw(glDrawable);
-        blockGreen.draw(glDrawable);
-        blockOrange.draw(glDrawable);
-        blockWhite.draw(glDrawable);
-        blockYellow.draw(glDrawable);*/
-        drawSelected(glDrawable, selected);
+
+        drawSelected(glDrawable, selected);//draw circle
+
         for (int x = 0; x < blocks4.length; x++) {
 			for (int y = 0; y < blocks4[0].length; y++) {
 				for (int z = 0; z < blocks4[0][0].length; z++) {
-					blocks4[x][y][z].draw(glDrawable);
+					blocks4[x][y][z].draw(glDrawable); //draw block
+                    blocks4[x][y][z].drawEdge(glDrawable); //draw edge
 				}
 			}
 		}

@@ -254,7 +254,7 @@ public class Block {
 	
 	public void drawEdge(GLAutoDrawable glDrawable){
 		final GL2 gl2 = glDrawable.getGL().getGL2();
-		gl2.glColor3f( 1.0f,0.0f,1.0f );
+		gl2.glColor3f( 0.0f,0.0f,0.0f );
 		gl2.glLineWidth(5.0f);
 		gl2.glBegin(GL2.GL_LINES);
 		gl2.glVertex3f(point1.x, point1.y, point1.z);
