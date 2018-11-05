@@ -43,31 +43,80 @@ public class MagicCube {
             for (int i=0;i<res.length;i++){
                 String curString=res[res.length-1-i];
                 if (curString.contains("L")||curString.contains("B")||curString.contains("D")){
-                    if (curString.contains("2")){
-                        String sDiv=curString.replace("2", "90").toLowerCase();
-                        resStack.push(sDiv);
-                        resStack.push(sDiv);
-                    }
-                    else if (curString.contains("'")){
-                        String sDiv=curString.replace("'", "90").toUpperCase();
-                        resStack.push(sDiv);
-                    }else{
-                        String sDiv=curString.toLowerCase()+"90";
-                        resStack.push(sDiv);
-                    }
-                }else{
-                    if (curString.contains("2")){
-                        String sDiv=curString.replace("2", "90");
-                        resStack.push(sDiv);
-                        resStack.push(sDiv);
-                    }
-                    else if (curString.contains("'")){
-                        String sDiv=curString.replace("'", "90").toLowerCase();
-                        resStack.push(sDiv);
+                    if(curString.contains("s")){
+                        String findAnother=findAnother(curString);
+                        if (curString.contains("2")){
+                            String sDiv=curString.replace("2", "90").toLowerCase();
+                            resStack.push(sDiv);
+                            resStack.push(sDiv);
+
+                            String sOth=(findAnother+"90").toLowerCase();
+                            resStack.push(sOth);
+                            resStack.push(sOth);
+                        }
+                        else if (curString.contains("'")){
+                            String sDiv=curString.replace("'", "90").toUpperCase();
+                            resStack.push(sDiv);
+
+                            String sOth=(findAnother+"90");
+                            resStack.push(sOth);
+                        }else{
+                            String sDiv=curString.toLowerCase()+"90";
+                            resStack.push(sDiv);
+                        }
                     }
                     else{
-                        String sDiv=curString+"90";
-                        resStack.push(sDiv);
+                        if (curString.contains("2")){
+                            String sDiv=curString.replace("2", "90").toLowerCase();
+                            resStack.push(sDiv);
+                            resStack.push(sDiv);
+                        }
+                        else if (curString.contains("'")){
+                            String sDiv=curString.replace("'", "90").toUpperCase();
+                            resStack.push(sDiv);
+                        }else{
+                            String sDiv=curString.toLowerCase()+"90";
+                            resStack.push(sDiv);
+                        }
+                    }
+
+                }else{
+                    if (curString.contains("s")){
+                        String findAnother=findAnother(curString);
+                        if (curString.contains("2")){
+                            String sDiv = curString.replace("2", "90");
+                            resStack.push(sDiv);
+                            resStack.push(sDiv);
+
+                            String sOth=findAnother+"90";
+                            resStack.push(sOth);
+                            resStack.push(sOth);
+                        }
+                        else if (curString.contains("'")){
+                            String sDiv=curString.replace("'", "90").toLowerCase();
+                            resStack.push(sDiv);
+
+                            String sOth=(findAnother+"90").toLowerCase();
+                            resStack.push(sOth);
+                        }
+                        else{
+                            String sDiv=curString+"90";
+                            resStack.push(sDiv);
+                        }
+                    } else{
+                        if (curString.contains("2")){
+                            String sDiv = curString.replace("2", "90");
+                            resStack.push(sDiv);
+                            resStack.push(sDiv);
+                        }
+                        else if (curString.contains("'")){
+                            String sDiv=curString.replace("'", "90").toLowerCase();
+                            resStack.push(sDiv);
+                        }
+                        else{
+                            String sDiv=curString+"90";
+                            resStack.push(sDiv);
+                        }
                     }
                 }
             }
@@ -210,5 +259,26 @@ public class MagicCube {
             System.out.println("解码结果:"+result);
             return result;
         }
+    }
+    private static String findAnother(String c){
+        String s="X";
+        if (c.contains("L")){
+            s= "R";
+        }else if (c.contains("R")){
+            s= "L";
+        }
+
+        else if (c.contains("U")){
+            s= "D";
+        } else if (c.contains("D")){
+            s= "U";
+        }
+
+        else if (c.contains("F")){
+            s= "B";
+        } else if (c.contains("B")){
+            s= "F";
+        }
+        return s;
     }
 }
